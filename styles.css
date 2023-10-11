@@ -11,6 +11,25 @@ html, body {
     height: 100%;
 }
 
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur {
+    height: 500px;
+    width: 500px;
+    background-color: #96c11e2b;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+}
+
 nav {
     height: 134px;
     width: 100%;
@@ -46,6 +65,7 @@ video {
     width: 100%;
     object-fit: cover;
     position: fixed;
+    z-index: -1;
 }
 
 main {
@@ -62,15 +82,23 @@ main {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    z-index: 10;
 }
 
 #section1 h1 {
     font-size: 140px;
     font-weight: 900;
+    position: relative;
 }
 
 #section1 h1::before {
-    content: "";
+    content: "EAT. DRINK. PLAY.";
+    color: #000;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
 }
 
 #section1 h2 {
@@ -84,4 +112,10 @@ main {
     font-size: 20px;
     font-weight: 400;
     width: 40%;
+}
+
+#section2 {
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
 }
